@@ -16,11 +16,15 @@ export class Game implements IUpdate {
     private _gameOver: boolean = false;
     private _score: number = 0;
 
-    constructor() {
+    private _elementId: string;
+
+    constructor(elementId: string) {
         this._snake = new Snake();
         this._foodPosition = this.getRandomPosition();
         this.InitFood(this._foodPosition);
         this.Update();
+        this._elementId = elementId;
+        CanvasLayer.ElementId = elementId;
     }
 
     Update(): void {
@@ -53,9 +57,9 @@ export class Game implements IUpdate {
     }
 
     private DrawGameScreen() {
-        CanvasLayer.BackgroundCanvas.FillRectangle(new Vector2D(Settings.backGroundCanvas.x, Settings.backGroundCanvas.y),
-            new Vector2D(Settings.backGroundCanvas.width, Settings.backGroundCanvas.height),
-            Settings.backGroundCanvas.color);
+        // CanvasLayer.BackgroundCanvas.FillRectangle(new Vector2D(Settings.backGroundCanvas.x, Settings.backGroundCanvas.y),
+        //     new Vector2D(Settings.backGroundCanvas.width, Settings.backGroundCanvas.height),
+        //     Settings.backGroundCanvas.color);
 
         CanvasLayer.ForegroundCanvas.FillRectangle(new Vector2D(Settings.foreGroundCanvas.x, Settings.foreGroundCanvas.y),
             new Vector2D(Settings.foreGroundCanvas.width, Settings.foreGroundCanvas.height),
@@ -65,8 +69,8 @@ export class Game implements IUpdate {
     }
 
     private ClearGameScreen() {
-        CanvasLayer.BackgroundCanvas.ClearRect(new Vector2D(Settings.backGroundCanvas.x, Settings.backGroundCanvas.y),
-            new Vector2D(Settings.backGroundCanvas.width, Settings.backGroundCanvas.height));
+        // CanvasLayer.BackgroundCanvas.ClearRect(new Vector2D(Settings.backGroundCanvas.x, Settings.backGroundCanvas.y),
+        //     new Vector2D(Settings.backGroundCanvas.width, Settings.backGroundCanvas.height));
 
         CanvasLayer.ForegroundCanvas.ClearRect(new Vector2D(Settings.foreGroundCanvas.x, Settings.foreGroundCanvas.y),
             new Vector2D(Settings.foreGroundCanvas.width, Settings.foreGroundCanvas.height));

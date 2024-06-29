@@ -1,10 +1,11 @@
 import { SnakeNode } from "../node/node";
 import { Settings } from "../settings";
 import { Directions } from "../utils/enums";
-import { KeyboardEvents } from "../utils/input-system/keyboard.listener";
 import { IAwake, IUpdate } from "../utils/lifecycle/lifecycle.h";
 import { NodeUtils } from "../utils/node.utils.ts/node.utils";
 import { Vector2D } from "../utils/vector-2d";
+
+import { KeyboardEvents } from "keyboard-event-listener"
 
 export class Snake implements IAwake, IUpdate {
 
@@ -92,11 +93,11 @@ export class Snake implements IAwake, IUpdate {
     public get DoesSnakeOverlaps(): boolean {
 
         for (let i = 1; i < this._nodes.length; i++) {
-                if(
-                    this._nodes[0].Position.x == this._nodes[i].Position.x &&
-                    this._nodes[0].Position.y == this._nodes[i].Position.y){
-                        return true;
-                    }
+            if (
+                this._nodes[0].Position.x == this._nodes[i].Position.x &&
+                this._nodes[0].Position.y == this._nodes[i].Position.y) {
+                return true;
+            }
             // if (this.Direction == Directions.Right || this.Direction == Directions.Left) {
             //     if (this._nodes[0].Position.y == this._nodes[i].Position.y &&
             //         ((this._nodes[0].Position.x >= this._nodes[i].Position.x && this._nodes[0].Position.x <= this._nodes[i].Position.x + Settings.node.width) ||

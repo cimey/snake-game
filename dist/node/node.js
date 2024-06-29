@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SnakeNode = void 0;
-const canvas_layer_1 = require("../utils/canvas-layer/canvas.layer");
-class SnakeNode {
+import { CanvasLayer } from "../utils/canvas-layer/canvas.layer";
+export class SnakeNode {
     constructor(direction, size, startPosition, color, gameDirection) {
         this._direction = direction;
         this._position = startPosition;
@@ -27,10 +24,10 @@ class SnakeNode {
         return this._size;
     }
     Draw() {
-        canvas_layer_1.CanvasLayer.ForegroundCanvas.FillRectangle(this._position, this._size, this._color);
+        CanvasLayer.ForegroundCanvas.FillRectangle(this._position, this._size, this._color);
     }
     Clear() {
-        canvas_layer_1.CanvasLayer.ForegroundCanvas.ClearRect(this._position, this._size);
+        CanvasLayer.ForegroundCanvas.ClearRect(this._position, this._size);
     }
     get Direction() {
         return this._direction;
@@ -39,4 +36,3 @@ class SnakeNode {
         this._direction = direction;
     }
 }
-exports.SnakeNode = SnakeNode;

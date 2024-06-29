@@ -1,6 +1,6 @@
 import { CanvasLayer } from "../utils/canvas-layer/canvas.layer";
 import { IAwake, IUpdate } from "../utils/lifecycle/lifecycle.h";
-import { Vector2D } from "../utils/vector-2d";
+import { Vector2D } from "../utils/vector-2d/vector.2d";
 
 export class Food implements IAwake, IUpdate {
 

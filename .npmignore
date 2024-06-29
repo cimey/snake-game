@@ -1,0 +1,13 @@
+
+node_modules/
+
+src/
+
+
+webpack.config.js
+
+deployment.yaml
+
+tsconfig.json
+
+Dockerfile

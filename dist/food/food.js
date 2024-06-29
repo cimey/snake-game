@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Food = void 0;
-const canvas_layer_1 = require("../utils/canvas-layer/canvas.layer");
-class Food {
+import { CanvasLayer } from "../utils/canvas-layer/canvas.layer";
+export class Food {
     constructor(position, size, color) {
         this._position = position;
         this._size = size;
@@ -18,10 +15,9 @@ class Food {
         this.Draw();
     }
     Clear() {
-        canvas_layer_1.CanvasLayer.ForegroundCanvas.ClearRect(this._position, this._size);
+        CanvasLayer.ForegroundCanvas.ClearRect(this._position, this._size);
     }
     Draw() {
-        canvas_layer_1.CanvasLayer.ForegroundCanvas.FillRectangle(this._position, this._size, this._color);
+        CanvasLayer.ForegroundCanvas.FillRectangle(this._position, this._size, this._color);
     }
 }
-exports.Food = Food;

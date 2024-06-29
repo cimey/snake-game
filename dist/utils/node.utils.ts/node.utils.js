@@ -1,35 +1,32 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.NodeUtils = void 0;
-const enums_1 = require("../enums");
-const vector_2d_1 = require("../vector-2d");
-class NodeUtils {
+import { Directions } from "../enums";
+import { Vector2D } from "../vector-2d";
+export class NodeUtils {
     static UpdateNodePosition(pos, direction, magnitude) {
-        if (direction == enums_1.Directions.Up) {
+        if (direction == Directions.Up) {
             pos.y = pos.y - magnitude;
         }
-        if (direction == enums_1.Directions.Down) {
+        if (direction == Directions.Down) {
             pos.y = pos.y + magnitude;
         }
-        if (direction == enums_1.Directions.Left) {
+        if (direction == Directions.Left) {
             pos.x = pos.x - magnitude;
         }
-        if (direction == enums_1.Directions.Right) {
+        if (direction == Directions.Right) {
             pos.x = pos.x + magnitude;
         }
     }
     static SetPrevNodePos(pos, direction, magnitude) {
-        let result = new vector_2d_1.Vector2D(pos.x, pos.y);
-        if (direction == enums_1.Directions.Up) {
+        let result = new Vector2D(pos.x, pos.y);
+        if (direction == Directions.Up) {
             result.y = result.y + magnitude;
         }
-        if (direction == enums_1.Directions.Down) {
+        if (direction == Directions.Down) {
             result.y = result.y - magnitude;
         }
-        if (direction == enums_1.Directions.Left) {
+        if (direction == Directions.Left) {
             result.x = result.x + magnitude;
         }
-        if (direction == enums_1.Directions.Right) {
+        if (direction == Directions.Right) {
             result.x = result.x - magnitude;
         }
         return result;
@@ -48,4 +45,3 @@ class NodeUtils {
             node2.Position.y + node2.Size.y < node1.Position.y);
     }
 }
-exports.NodeUtils = NodeUtils;

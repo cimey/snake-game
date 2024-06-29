@@ -1,16 +1,20 @@
 {
-  "name": "snake-game",
-  "version": "1.0.0",
+  "name": "yet-another-snake-game",
+  "version": "1.1.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "build": "webpack --watch",
-  "start": "node dist/bundle.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "node dist/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "canvas-drawing-engine": "^1.0.6",
+    "keyboard-event-listener": "^1.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
